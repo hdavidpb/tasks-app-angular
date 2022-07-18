@@ -1,0 +1,8 @@
+<div class="tasks-container">
+  <app-tasks-form (onAddNewTaskEvent)="onAddNewTask($event)"></app-tasks-form>
+  <app-tasks-list
+    (onDeleteTaskEvent)="onDeleteTask($event)"
+    (onDoneTaskEvent)="onIsDoneTask($event)"
+    [tasks]="tasks"
+  ></app-tasks-list>
+</div>

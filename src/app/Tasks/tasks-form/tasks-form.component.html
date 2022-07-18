@@ -1,0 +1,63 @@
+<div class="tasks-form-container">
+  <h1 class="task-title">Add Your Tasks</h1>
+  <form
+    (ngSubmit)="onSubmit()"
+    class="form-group-container"
+    [formGroup]="modelForm"
+  >
+    <div class="input-fields-container">
+      <label>Title</label>
+      <input
+        type="text"
+        name="title"
+        placeholder="some title here..."
+        required
+        formControlName="title"
+      />
+      <span
+        class="error-alerts"
+        *ngIf=" modelForm.get('title')?.errors?.['required'] && isInvalidForm"
+        >Este Campo es requerido</span
+      >
+    </div>
+
+    <div class="input-fields-container">
+      <label>Date to do</label>
+      <input type="date" name="date" required formControlName="date" />
+      <span
+        class="error-alerts"
+        *ngIf="modelForm.get('date')?.errors?.['required']  && isInvalidForm"
+        >Este Campo es requerido</span
+      >
+    </div>
+    <div class="input-fields-container">
+      <label>Description</label>
+      <textarea
+        name="description"
+        placeholder="some description here..."
+        required
+        formControlName="description"
+      ></textarea>
+      <span
+        class="error-alerts"
+        *ngIf="
+          modelForm.get('description')?.errors?.['required'] && isInvalidForm
+        "
+        >Este Campo es requerido</span
+      >
+    </div>
+    <div class="input-fields-container-checks">
+      <label for="priority-check">Is high priority</label>
+      <input
+        type="checkbox"
+        id="priority-check"
+        name="priority"
+        formControlName="priority"
+      />
+    </div>
+
+    <div class="input-fields-container">
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+  </form>
+</div>

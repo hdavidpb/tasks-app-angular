@@ -1,0 +1,29 @@
+@use "./variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--primary-font-family);
+}
+
+.btn {
+  border-radius: 6px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: all 0.4s;
+  border: none;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.btn-success {
+  background: rgba(0, 128, 0, 0.811);
+}
